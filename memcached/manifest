@@ -1,0 +1,2 @@
+/memcached.so: module/memcached/memcached.so
+/libevent-2.0.so.5: /usr/lib64/libevent-2.0.so.5.1.6

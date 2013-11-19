@@ -1,0 +1,27 @@
+# Build an src/ directory from the upstream memcached.
+set -e
+VERSION=1.4.15
+
+mkdir src
+mkdir upstream
+cd upstream
+wget http://memcached.googlecode.com/files/memcached-$VERSION.tar.gz
+tar zxvf memcached-$VERSION.tar.gz
+cd memcached-$VERSION
+./configure
+
+cd ../..
+
+for i in \
+	assoc.c config.h items.c protocol_binary.h stats.c util.c \
+	assoc.h daemon.c items.h sasl_defs.h stats.h util.h \
+	cache.c hash.c memcached.c slabs.c thread.c \
+        cache.h hash.h memcached.h slabs.h trace.h
+do
+	cp upstream/memcached-$VERSION/$i src/$i
+done
+
+cd src
+patch -p1 < ../patch
+cd ..
+rm -r upstream

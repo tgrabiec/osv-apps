@@ -1,0 +1,2 @@
+/usr/cassandra/lib/**: module/cassandra/upstream/apache-cassandra-1.2.6/lib/**
+/usr/cassandra/conf/**: module/cassandra/upstream/apache-cassandra-1.2.6/conf/**

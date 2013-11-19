@@ -1,0 +1,13 @@
+# Build a ... directory from the upstream cassandra.
+set -e
+VERSION=1.2.6
+
+mkdir upstream
+cd upstream
+wget http://archive.apache.org/dist/cassandra/$VERSION/apache-cassandra-$VERSION-bin.tar.gz
+tar zxvf apache-cassandra-$VERSION-bin.tar.gz
+cd apache-cassandra-$VERSION
+patch -p1 < ../../cassandra-osv.patch
+cd ..
+cd ..
+#rm -r upstream

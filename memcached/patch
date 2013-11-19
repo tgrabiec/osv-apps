@@ -1,0 +1,42 @@
+--- src/assoc.c	2013-11-18 13:00:26.080026394 +0200
++++ src-save/assoc.c	2013-07-03 11:27:41.113465014 +0300
+@@ -203,6 +203,7 @@
+ 
+ static void *assoc_maintenance_thread(void *arg) {
+ 
++    slabs_rebalancer_pause(); // Added by NYH - see memcached issue #331
+     while (do_run_maintenance_thread) {
+         int ii = 0;
+
+
+--- src/config.h	2013-11-18 13:03:28.724905615 +0200
++++ src-save/config.h	2013-06-27 10:26:35.368680461 +0300
+@@ -44,13 +44,13 @@
+ #define HAVE_MLOCKALL 1
+ 
+ /* we have sasl_callback_ft */
+-#define HAVE_SASL_CALLBACK_FT 1
++/* #undef HAVE_SASL_CALLBACK_FT */
+ 
+ /* Set to nonzero if your SASL implementation supports SASL_CB_GETCONF */
+ /* #undef HAVE_SASL_CB_GETCONF */
+ 
+ /* Define to 1 if you have the <sasl/sasl.h> header file. */
+-#define HAVE_SASL_SASL_H 1
++/* #undef HAVE_SASL_SASL_H */
+ 
+ /* Define to 1 if you have the `setppriv' function. */
+ /* #undef HAVE_SETPPRIV */
+
+--- src/memcached.c	2013-11-18 13:04:54.087316443 +0200
++++ src-save/memcached.c	2013-06-30 12:05:09.286145086 +0300
+@@ -4732,6 +4732,8 @@
+         NULL
+     };
+ 
++    printf("Memcached for OSV, based on Memcached %s\n", VERSION);
++
+     if (!sanitycheck()) {
+         return EX_OSERR;
+     }
+

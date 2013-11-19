@@ -1,0 +1,5 @@
+/specjvm.jar: module/specjvm/SPECjvm2008/SPECjvm2008.jar
+/lib/**: module/specjvm/SPECjvm2008/lib/**
+/resources/**: module/specjvm/SPECjvm2008/resources/**
+/props/**: module/specjvm/SPECjvm2008/props/**
+/redistributable_sources/**: module/specjvm/SPECjvm2008/redistributable_sources/**
