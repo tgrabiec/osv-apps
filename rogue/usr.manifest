@@ -1,0 +1,2 @@
+/usr/games/rogue: module/rogue/upstream/rogue5.4.4/rogue
+/usr/share/terminfo/u/unknown: module/rogue/upstream/fixed-terminfo/u/unknown
