@@ -9,5 +9,7 @@ tar zxvf apache-cassandra-$VERSION-bin.tar.gz
 cd apache-cassandra-$VERSION
 patch -p1 < ../../cassandra-osv.patch
 cd ..
+
+wget https://maven.java.net/content/repositories/releases/net/java/dev/jna/jna/4.0.0/jna-4.0.0.jar
 cd ..
 #rm -r upstream
