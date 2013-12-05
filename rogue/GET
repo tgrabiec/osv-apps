@@ -3,6 +3,11 @@ set -ev
 mkdir upstream
 cd upstream
 
+# Lose any inherited make flags
+unset MAKEFLAGS
+unset MFLAGS
+unset MAKE
+
 # Get and compile ncurses
 
 wget http://ftp.gnu.org/pub/gnu/ncurses/ncurses-5.9.tar.gz
