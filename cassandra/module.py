@@ -9,7 +9,7 @@ default = api.run_java(
         '-Xmx1968M',
         '-Xmn400M',
         '-XX:+HeapDumpOnOutOfMemoryError',
-        '-Xss180k',
+        '-Xss228k',
         '-XX:+UseParNewGC',
         '-XX:+UseConcMarkSweepGC',
         '-XX:+CMSParallelRemarkEnabled',
