@@ -10,6 +10,6 @@ cd apache-cassandra-$VERSION
 patch -p1 < ../../cassandra-osv.patch
 cd ..
 
-wget https://maven.java.net/content/repositories/releases/net/java/dev/jna/jna/4.0.0/jna-4.0.0.jar
+wget http://download.java.net/maven/2/net/java/dev/jna/jna/3.2.7/jna-3.2.7.jar
 cd ..
 #rm -r upstream
