@@ -1,0 +1,29 @@
+From 210e530f69c5053326a644c23414a7f835402ebe Mon Sep 17 00:00:00 2001
+From: Tomasz Grabiec <tgrabiec@cloudius-systems.com>
+Date: Tue, 19 Nov 2013 17:24:05 +0100
+Subject: [PATCH 4/5] disable Jasper development mode
+
+
+Signed-off-by: Tomasz Grabiec <tgrabiec@cloudius-systems.com>
+---
+ conf/web.xml | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/conf/web.xml b/conf/web.xml
+index 696101a..8ec0ece 100644
+--- a/conf/web.xml
++++ b/conf/web.xml
+@@ -238,6 +238,10 @@
+             <param-name>xpoweredBy</param-name>
+             <param-value>false</param-value>
+         </init-param>
++        <init-param>
++            <param-name>development</param-name>
++            <param-value>false</param-value>
++        </init-param>
+         <load-on-startup>3</load-on-startup>
+     </servlet>
+ 
+-- 
+1.8.1.2
+

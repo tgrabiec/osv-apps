@@ -1,0 +1,27 @@
+From 350f89f7b0a43a9227a7c637d8a478d80743f124 Mon Sep 17 00:00:00 2001
+From: Tomasz Grabiec <tgrabiec@cloudius-systems.com>
+Date: Tue, 19 Nov 2013 20:26:48 +0100
+Subject: [PATCH 5/5] bump up number of threads
+
+
+Signed-off-by: Tomasz Grabiec <tgrabiec@cloudius-systems.com>
+---
+ conf/server.xml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/conf/server.xml b/conf/server.xml
+index ae4949a..cd04bc2 100644
+--- a/conf/server.xml
++++ b/conf/server.xml
+@@ -69,6 +69,8 @@
+     -->
+     <Connector port="8081" protocol="HTTP/1.1"
+                connectionTimeout="20000"
++               maxThreads="800"
++               minSpareThreads="256"
+                redirectPort="8443" />
+     <!-- A "Connector" using the shared thread pool-->
+     <!--
+-- 
+1.8.1.2
+

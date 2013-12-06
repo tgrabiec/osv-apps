@@ -1,0 +1,25 @@
+From 4da61bbd4d8e54db1da9b77c16f5bb02c91bce60 Mon Sep 17 00:00:00 2001
+From: Tomasz Grabiec <tgrabiec@cloudius-systems.com>
+Date: Wed, 20 Nov 2013 09:11:31 +0100
+Subject: [PATCH 3/5] assign admin-gui role to tomcat user
+
+
+Signed-off-by: Tomasz Grabiec <tgrabiec@cloudius-systems.com>
+---
+ conf/tomcat-users.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/conf/tomcat-users.xml b/conf/tomcat-users.xml
+index 2f9579c..bcf840a 100644
+--- a/conf/tomcat-users.xml
++++ b/conf/tomcat-users.xml
+@@ -27,5 +27,5 @@
+   <!.. ..> that surrounds them.
+ -->
+   <role rolename="tomcat"/>
+-  <user username="tomcat" password="tomcat" roles="manager-gui"/>
++  <user username="tomcat" password="tomcat" roles="manager-gui,admin-gui"/>
+ </tomcat-users>
+-- 
+1.8.1.2
+

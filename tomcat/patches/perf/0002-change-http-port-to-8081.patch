@@ -1,0 +1,27 @@
+From 151795f23e5733676c71423c615a6196d0107595 Mon Sep 17 00:00:00 2001
+From: Tomasz Grabiec <tgrabiec@cloudius-systems.com>
+Date: Wed, 20 Nov 2013 09:11:12 +0100
+Subject: [PATCH 2/5] change http port to 8081
+
+
+Signed-off-by: Tomasz Grabiec <tgrabiec@cloudius-systems.com>
+---
+ conf/server.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/conf/server.xml b/conf/server.xml
+index ea36bde..ae4949a 100644
+--- a/conf/server.xml
++++ b/conf/server.xml
+@@ -67,7 +67,7 @@
+          APR (HTTP/AJP) Connector: /docs/apr.html
+          Define a non-SSL HTTP/1.1 Connector on port 8080
+     -->
+-    <Connector port="8080" protocol="HTTP/1.1"
++    <Connector port="8081" protocol="HTTP/1.1"
+                connectionTimeout="20000"
+                redirectPort="8443" />
+     <!-- A "Connector" using the shared thread pool-->
+-- 
+1.8.1.2
+
