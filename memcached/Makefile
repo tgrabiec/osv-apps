@@ -1,15 +1,21 @@
-include ../module.mk
-
+.PHONY: module
 module: memcached.so
 	cp manifest usr.manifest
 	: > bootfs.manifest
 
-memcachedobjs := assoc.o cache.o daemon.o hash.o items.o memcached.o \
-        slabs.o stats.o thread.o util.o
-memcachedobjs := $(addprefix src/, $(memcachedobjs))
-$(memcachedobjs): CFLAGS += -fPIC -DHAVE_CONFIG_H -isystem /usr/include
+src:
+	./GET
 
-memcached.so: CFLAGS+=-levent
-memcached.so: $(memcachedobjs)
-	$(makedir)
-	$(q-build-so)
+sources := assoc.c cache.c daemon.c hash.c items.c memcached.c slabs.c \
+	stats.c thread.c util.c
+
+sources := $(addprefix src/, $(sources))
+objects := $(sources:c=o)
+
+$(sources): src
+
+CFLAGS = -std=gnu99 -fPIC -DHAVE_CONFIG_H
+LDFLAGS = -shared -levent
+
+memcached.so: $(objects)
+	$(CC) -o $@ $(LDFLAGS) $(objects)
