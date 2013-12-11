@@ -1,6 +1,9 @@
 .PHONY: module
 module: memcached.so
-	cp manifest usr.manifest
+	echo '/memcached.so: $${MODULE_DIR}/memcached.so' > usr.manifest
+	ldd memcached.so | grep libevent | \
+		sed 's/ *[^ ] *\(.*\) => \(.*\) .*/\/\1: \2/' \
+		>> usr.manifest
 	: > bootfs.manifest
 
 src:
@@ -19,3 +22,7 @@ LDFLAGS = -shared -levent
 
 memcached.so: $(objects)
 	$(CC) -o $@ $(LDFLAGS) $(objects)
+
+clean:
+	rm -rf upstream src
+	rm -f bootfs.manifest usr.manifest module.pyc memcached.so
