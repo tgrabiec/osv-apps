@@ -1,6 +1,6 @@
 # Build a ... directory from the upstream cassandra.
 set -e
-VERSION=1.2.6
+VERSION=2.0.3
 
 mkdir upstream
 cd upstream
