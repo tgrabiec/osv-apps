@@ -14,7 +14,7 @@ _classpath.append("%s/bin/tomcat-juli.jar" % _catalina_base)
 
 default = api.run_java(
         classpath=_classpath,
-        jvm_args=_logging_config,
+        jvm_args=_logging_config + ['-Xmx2g -Xms2g'],
         args=[
             "-Dcatalina.base=%s" % _catalina_base,
             "-Dcatalina.home=%s" % _catalina_base,
