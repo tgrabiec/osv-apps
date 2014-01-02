@@ -26,5 +26,9 @@
 "osvm": {
     "type": "direct-dir",
     "path": "${OSV_BASE}/apps/osvm/"
+},
+"netperf": {
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/netperf/"
 }
 }
