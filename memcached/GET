@@ -22,6 +22,13 @@ do
 done
 
 cd src
+
 patch -N -p1 < ../patch || true
+
+# Disable various options turned on by "configure" above (if they are
+# indeed turned on), but which we do not want in any case.
+mv config.h config.h.orig
+sed '/HAVE_SASL_/d' < config.h.orig > config.h
+
 cd ..
 rm -r upstream

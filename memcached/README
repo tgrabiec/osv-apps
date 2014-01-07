@@ -1,1 +1,4 @@
 From Memcached v1.4.15, http://memcached.org/
+
+Compiling memcached requires libevent and its header files. On Fedora,
+for example, this requires the "libevent-devel" package package.
