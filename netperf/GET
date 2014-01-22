@@ -15,7 +15,6 @@ make
 mkdir bin
 cp src/netperf bin/
 
-patch -p1 < ../../0001-netperf-socket-timeout-for-send-receive-operations.patch
 make clean
 make CFLAGS="-fPIC -shared"
 mkdir osv
