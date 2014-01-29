@@ -34,5 +34,9 @@
 "mruby": {
     "type": "direct-dir",
     "path": "${OSV_BASE}/apps/mruby/"
+},
+"netperf3": {
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/netperf3/"
 }
 }
