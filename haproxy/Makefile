@@ -4,11 +4,11 @@ module: haproxy.so
 	echo '/haproxy.cfg: $${MODULE_DIR}/haproxy.cfg' >> usr.manifest
 	: > bootfs.manifest
 
-haproxy.so:
+haproxy.so: haproxy
 	make -C haproxy TARGET=linux26 CFLAGS="-fPIC -shared" LDFLAGS="-fPIC -shared" -j4
 	cp -vf haproxy/haproxy haproxy.so
 
-src:
+haproxy:
 	./GET
 
 clean:

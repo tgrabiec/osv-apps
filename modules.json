@@ -20,8 +20,8 @@
     "path": "${OSV_BASE}/apps/specjvm/"
 },
 "haproxy": {
-    "type": "haproxy",
-    "path": "${OSV_BASE}/apps/specjvm/"
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/haproxy/"
 },
 "osvm": {
     "type": "direct-dir",
