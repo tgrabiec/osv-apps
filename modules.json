@@ -42,5 +42,9 @@
 "iperf": {
     "type": "direct-dir",
     "path": "${OSV_BASE}/apps/iperf/"
+},
+"openjdk8": {
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/openjdk8/"
 }
 }
