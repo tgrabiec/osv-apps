@@ -38,5 +38,9 @@
 "netperf3": {
     "type": "direct-dir",
     "path": "${OSV_BASE}/apps/netperf3/"
+},
+"iperf": {
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/iperf/"
 }
 }
