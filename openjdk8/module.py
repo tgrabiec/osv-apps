@@ -1,3 +1,5 @@
+provides = ['java']
+
 from osv.modules.filemap import FileMap
 
 usr_files = FileMap()
