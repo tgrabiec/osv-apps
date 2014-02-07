@@ -20,11 +20,31 @@
     "path": "${OSV_BASE}/apps/specjvm/"
 },
 "haproxy": {
-    "type": "haproxy",
-    "path": "${OSV_BASE}/apps/specjvm/"
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/haproxy/"
 },
 "osvm": {
     "type": "direct-dir",
     "path": "${OSV_BASE}/apps/osvm/"
+},
+"netperf": {
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/netperf/"
+},
+"mruby": {
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/mruby/"
+},
+"netperf3": {
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/netperf3/"
+},
+"iperf": {
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/iperf/"
+},
+"openjdk8": {
+    "type": "direct-dir",
+    "path": "${OSV_BASE}/apps/openjdk8/"
 }
 }

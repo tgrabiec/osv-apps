@@ -1,0 +1,13 @@
+diff -ur iperf-2.0.5.orig/src/Makefile.in iperf-2.0.5/src/Makefile.in
+--- iperf-2.0.5.orig/src/Makefile.in	2014-02-06 15:14:55.013564388 +0200
++++ iperf-2.0.5/src/Makefile.in	2014-02-06 15:19:17.260466699 +0200
+@@ -193,7 +193,7 @@
+ 
+ AM_CXXFLAGS = -Wall
+ AM_CFLAGS = -Wall
+-iperf_LDFLAGS = @CFLAGS@ @PTHREAD_CFLAGS@ @WEB100_CFLAGS@ @DEFS@
++iperf_LDFLAGS = @CFLAGS@ @PTHREAD_CFLAGS@ @WEB100_CFLAGS@ @DEFS@ -shared
+ iperf_SOURCES = \
+ 		Client.cpp \
+ 		Extractor.c \
+Only in iperf-2.0.5/src: Makefile.in~

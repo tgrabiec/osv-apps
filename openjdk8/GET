@@ -1,0 +1,15 @@
+#!/bin/sh
+
+mkdir upstream
+cd upstream
+hg clone http://hg.openjdk.java.net/jdk8/jdk8/
+cd jdk8
+sh get_source.sh
+
+bash configure --enable-option-checking=fatal --prefix=`dirname $PWD`/install --disable-headful --disable-zip-debug-info
+
+# Many of use set MAKEFLAGS=-j4. Strangely, openjdk's Makefile doesn't
+# allow this, and aborts if -j4 is used - it needs JOBS=4 instead.
+unset MAKEFLAGS
+
+make JOBS=4 && make install && cp jdk/test/sun/security/pkcs11/Secmod/nss.cfg ../install/jvm/openjdk-1.8.0-internal//jre/lib/security/
